@@ -19,7 +19,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="h-full flex flex-col items-center bg-white justify-center">
+    <div className="h-full flex flex-col items-center bg-white justify-center font-custom">
       {/* Logo Section */}
       <div className="flex justify-center items-center p-4">
         <img
@@ -41,7 +41,7 @@ export default function Profile() {
       </div>
 
       {/* User Information Section */}
-      <div className="w-full h-full p-6 bg-white rounded-lg  mt-6 space-y-4">
+      <div className="w-full h-full p-6 bg-white rounded-lg  mt-6 space-y-4 text-lg">
         {/* User ID */}
         <div className="flex items-center">
           <IdcardOutlined className="text-xl text-blue-500 mr-4" />
