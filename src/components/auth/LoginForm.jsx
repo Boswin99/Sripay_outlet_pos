@@ -10,6 +10,7 @@ export default function LoginForm({ onForgotPassword, onLogin }) {
   });
 
   return (
+    <div>
     <AuthCard
       title="Welcome back"
       subtitle="Please sign in to your account"
@@ -20,15 +21,17 @@ export default function LoginForm({ onForgotPassword, onLogin }) {
         onFinish={handleSubmit}
         layout="vertical"
         size="large"
+        className="space-y-4"
       >
         <Form.Item
           name="email"
           rules={[{ required: true, message: 'Please input your email!' }]}
         >
-          <Input 
+          <Input
             prefix={<UserOutlined />}
             placeholder="Email address"
             type="email"
+            className="rounded-md"
           />
         </Form.Item>
 
@@ -39,25 +42,32 @@ export default function LoginForm({ onForgotPassword, onLogin }) {
           <Input.Password
             prefix={<LockOutlined />}
             placeholder="Password"
+            className="rounded-md"
           />
         </Form.Item>
 
         <div className="flex justify-between items-center mb-4">
-          <Form.Item name="remember" valuePropName="checked" noStyle className="color-white">
-            <Checkbox>Remember me</Checkbox>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox className="text-gray-600">Remember me</Checkbox>
           </Form.Item>
-
-          <Button type="link" onClick={onForgotPassword} className="!p-0">
+          <Button type="link" onClick={onForgotPassword} className="text-blue-500">
             Forgot password?
           </Button>
         </div>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" block loading={loading} className="bg-button">
+          <Button
+            type="primary"
+            htmlType="submit"
+            block
+            loading={loading}
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-md"
+          >
             Sign in
           </Button>
         </Form.Item>
       </Form>
     </AuthCard>
+    </div>
   );
 }
