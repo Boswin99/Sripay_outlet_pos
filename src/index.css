@@ -3,13 +3,8 @@
 @tailwind utilities;
 
 /* Ant Design Custom Styles */
-.ant-btn-primary {
-  @apply shadow-md;
-}
 
-.ant-card {
-  @apply shadow-md;
-}
+
 
 /* Mobile-specific styles */
 @media (max-width: 640px) {
