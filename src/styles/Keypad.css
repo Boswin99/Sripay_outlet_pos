@@ -1,0 +1,59 @@
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  height: 400px;
+}
+
+.keypad .ant-btn {
+  height: 80px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #fff;
+  color: #03045e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", serif !important;
+}
+
+.keypad .ant-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.keypad .operator {
+  background-color: #4561a8;
+  color: white;
+}
+
+.keypad .operator:hover {
+  background-color: #29abe2;
+}
+
+.keypad .equals {
+  background-color: #29abe2;
+  color: white;
+}
+
+.keypad .equals:hover {
+  background-color: #4561a8;
+}
+
+.keypad .clear {
+  grid-column: span 4;
+  background-color: #03045e;
+  color: white;
+  font-size: 1.2rem!important;
+  font-family: "Poppins", serif !important;
+  width: 50%;
+  justify-self: right;
+}
+
+.keypad .clear:hover {
+  background-color: #4561a8;
+}
+
+.keypad .ant-btn {
+  height: 60px;
+  font-size: 2rem;
+  font-family: "Poppins", serif !important;
+}

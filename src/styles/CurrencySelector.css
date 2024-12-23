@@ -1,0 +1,12 @@
+.currency-selector {
+  margin-bottom: 20px;
+}
+
+.currency-selector .ant-select {
+  width: 150px;
+  font: 1em sans-serif;
+  font-weight: bold;
+  height: 45px;
+  font-size: 50px;
+  font-family: "Poppins", serif !important;
+}

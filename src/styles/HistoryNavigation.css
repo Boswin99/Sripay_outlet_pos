@@ -1,0 +1,19 @@
+.history-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.history-btn {
+  flex: 1;
+  background-color: #4561a8;
+}
+
+.history-btn:hover:not(:disabled) {
+  background-color: #29abe2;
+}
+
+.history-btn:disabled {
+  background-color: #cccccc;
+}

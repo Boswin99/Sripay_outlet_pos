@@ -1,0 +1,42 @@
+.form-navigation {
+  padding: 20px 0;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  width: 50%;
+  font-family: "Poppins", serif !important;
+}
+
+/* .back-button:hover {
+  background-color: #29abe2 !important;
+} */
+
+.submit-button {
+  width: 100%;
+  background-color: #03045e;
+  font-family: "Poppins", serif !important;
+}
+
+/* .submit-button:hover {
+  background-color: #4561a8 !important;
+} */
+
+.ant-form-item-label > label {
+  color: #03045e;
+  font-weight: 500;
+}
+
+.ant-input {
+  border-color: #29abe2;
+}
+
+.ant-input:hover,
+.ant-input:focus {
+  border-color: #4561a8;
+  box-shadow: 0 0 0 2px rgba(69, 97, 168, 0.2);
+}
