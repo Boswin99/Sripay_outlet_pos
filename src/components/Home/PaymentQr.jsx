@@ -1,13 +1,13 @@
 import QRCodeGenerator from './QRCodeGenerator';
 
 
-const PaymentQr = ({payAmount}) => {
-    return(
+const PaymentQr = ({ payAmount }) => {
+    return (
         <>
             <div>
-            {payAmount}
+                {payAmount}
             </div>
-            <QRCodeGenerator/>
+            <QRCodeGenerator />
         </>
     );
 }
