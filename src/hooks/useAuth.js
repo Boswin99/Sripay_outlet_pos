@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,6 +9,16 @@ export function useAuth() {
   const navigate = useNavigate();
 
 
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setIsAuthenticated(true);
+      navigate('/home')
+    }else{
+      setIsAuthenticated(false);
+      navigate('/')
+    }
+  }, [])
 
   const handleLogin = () => {
     setIsAuthenticated(true);
@@ -17,6 +27,7 @@ export function useAuth() {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    navigate('/')
     setCurrentView('login');
   };
 

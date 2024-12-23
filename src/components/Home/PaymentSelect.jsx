@@ -6,7 +6,7 @@ import { useState } from 'react';
 import payIcone from '../../assets/icone/pay.png'
 
 
-function PaymentSelect({ formData, onSubmit, onChange, onBack }) {
+function PaymentSelect({formData, onSubmit, onBack }) {
 
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
   const handleDivClick = (value) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Typography, List, Avatar, Button } from 'antd';
 import { UserOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import logo from '../assets/plus.png';
-import Calculator from '../components/Calculator/Calculator';
+import Calculator from '../components/Home/Calculator';
 
 
 export default function HomePage() {
