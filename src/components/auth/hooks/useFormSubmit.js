@@ -18,9 +18,31 @@ export function useFormSubmit({ onSuccess, validatePassword = false }) {
 
     setLoading(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      onSuccess(values);
+      const response = await fetch(
+        "https://api.sripayplus.com/secure/v2/auth/signin/email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: values.email,
+            password: values.password,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Sign-In successful:", data);
+        if (data.role === "storeUser") {
+          localStorage.setItem("user", JSON.stringify(data));
+          onSuccess(values);
+        }
+        message.success('Sign-In successful')
+      } else {
+        message.error('Invalid email or password. Please try again.');
+      }
     } catch (error) {
       message.error('Operation failed. Please try again.');
     } finally {
