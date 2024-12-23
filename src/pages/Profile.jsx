@@ -1,109 +1,93 @@
 import React, { useState } from "react";
-import { Avatar, Typography, Button, Select, message } from "antd";
+import { Avatar, Button, message } from "antd";
 import {
   UserOutlined,
   IdcardOutlined,
   MailOutlined,
-  ClusterOutlined,
   LogoutOutlined,
+  ProfileOutlined,
 } from "@ant-design/icons";
 import logo from "../assets/plus.png";
 
-const { Option } = Select;
-
 export default function Profile() {
-  const [selectedTerminal, setSelectedTerminal] = useState("Main Terminal");
   const userInfo = {
-    userId: "12345",
-    name: "John Doe",
-    username: "johndoe",
-    email: "johndoe@example.com",
-  };
-
-  const handleSave = () => {
-    message.success(`Terminal updated to: ${selectedTerminal}`);
+    name: "James Martin",
+    jobTitle: "Senior Graphic Designer",
+    userId: "123456",
+    username: "jamie",
+    email: "james@gmail.com",
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg flex flex-col min-h-screen">
-      {/* Header with Logo */}
-      <div className="flex justify-center items-center py-6 bg-gray-100">
-        <img src={logo} alt="Logo" className="w-40 h-auto" />
+    <div className="h-full flex flex-col items-center bg-white justify-center">
+      {/* Logo Section */}
+      <div className="flex justify-center items-center p-4">
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-32 h-auto flex justify-center items-center"
+        />
       </div>
 
-      <div className="bg-gray-50 p-6 w-full flex-grow rounded-t-lg">
-        {/* User Profile */}
-        <div className="text-center">
-          <Avatar
-            size={120}
-            icon={<UserOutlined />}
-            className="mb-6"
-            style={{ backgroundColor: "#fde3cf", color: "#f56a00" }}
-          />
-          <Typography.Title level={3} className="mb-1">
-            {userInfo.name}
-          </Typography.Title>
-          <Typography.Text type="secondary" className="text-lg">
-            @{userInfo.username}
-          </Typography.Text>
-        </div>
-
-        {/* User Information */}
-        <div className="mt-8 space-y-6 text-lg">
-          <div className="flex justify-between items-center">
-            <Typography.Text className="flex items-center text-gray-700">
-              <IdcardOutlined className="mr-3 text-2xl" />
-              User ID
-            </Typography.Text>
-            <Typography.Text>{userInfo.userId}</Typography.Text>
-          </div>
-          <div className="flex justify-between items-center">
-            <Typography.Text className="flex items-center text-gray-700">
-              <UserOutlined className="mr-3 text-2xl" />
-              Name
-            </Typography.Text>
-            <Typography.Text>{userInfo.name}</Typography.Text>
-          </div>
-          <div className="flex justify-between items-center">
-            <Typography.Text className="flex items-center text-gray-700">
-              <MailOutlined className="mr-3 text-2xl" />
-              Email
-            </Typography.Text>
-            <Typography.Text>{userInfo.email}</Typography.Text>
-          </div>
-          <div className="flex justify-between items-center">
-            <Typography.Text className="flex items-center text-gray-700">
-              <ClusterOutlined className="mr-3 text-2xl" />
-              Terminal
-            </Typography.Text>
-            <div className="flex items-center space-x-3">
-              <Select
-                value={selectedTerminal}
-                onChange={(value) => setSelectedTerminal(value)}
-                className="w-48 text-lg"
-              >
-                <Option value="Main Terminal">Main Terminal</Option>
-                <Option value="Backup Terminal">Backup Terminal</Option>
-                <Option value="Testing Terminal">Testing Terminal</Option>
-              </Select>
-              <Button type="primary" size="large" onClick={handleSave}>
-                Save
-              </Button>
-            </div>
-          </div>
-        </div>
+      {/* Blue Header with Profile */}
+      <div className="w-full bg-blue-500 rounded-b-3xl p-6 text-center relative ">
+        <Avatar
+          size={120}
+          src="https://via.placeholder.com/150"
+          className="mb-4 border-4 border-white"
+        />
+        <div className="text-white font-bold text-2xl">{userInfo.name}</div>
+        <div className="text-white text-lg">{userInfo.jobTitle}</div>
       </div>
 
-      {/* Logout Button */}
-      <div className="p-6 mt-auto w-full bg-gray-100">
-        <Button
-          icon={<LogoutOutlined />}
-          danger
-          className="w-full text-lg py-3"
-          size="large"
-        >
-          Logout
-        </Button>
+      {/* User Information Section */}
+      <div className="w-full h-full p-6 bg-white rounded-lg  mt-6 space-y-4">
+        {/* User ID */}
+        <div className="flex items-center">
+          <IdcardOutlined className="text-xl text-blue-500 mr-4" />
+          <div>
+            <div className="font-bold">User ID</div>
+            <div>{userInfo.userId}</div>
+          </div>
+        </div>
+
+        {/* Name */}
+        <div className="flex items-center">
+          <UserOutlined className="text-xl text-blue-500 mr-4" />
+          <div>
+            <div className="font-bold">Name</div>
+            <div>{userInfo.name}</div>
+          </div>
+        </div>
+
+        {/* Username */}
+        <div className="flex items-center">
+          <ProfileOutlined className="text-xl text-blue-500 mr-4" />
+          <div>
+            <div className="font-bold">Username</div>
+            <div>{userInfo.username}</div>
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center">
+          <MailOutlined className="text-xl text-blue-500 mr-4" />
+          <div>
+            <div className="font-bold">Email</div>
+            <div>{userInfo.email}</div>
+          </div>
+        </div>
+        {/* Logout Button */}
+        <div className="w-full mt-6 px-6">
+          <Button
+            icon={<LogoutOutlined />}
+            danger
+            className="w-full text-lg py-3"
+            size="large"
+          >
+            Logout
+          </Button>
+        </div>
       </div>
     </div>
   );
