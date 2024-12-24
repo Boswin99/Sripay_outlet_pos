@@ -6,6 +6,7 @@ export default {
       colors: {
         button: "#29abe2",
         secondaryButton: "#03045e",
+        sricolor: "#29ABE2",
       },
       fontFamily: {
         custom: ["Poppins"],

@@ -9,6 +9,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import Profile from './pages/Profile';
+import Transactions from './pages/Transactions';
+
 
 
 
@@ -47,7 +49,7 @@ function App() {
             } />
             <Route path='/transaction' element={
               <MainLayout activeTab={activeTab} onTabChange={handleTabChange}>
-                {/* <HomePage /> */}
+                <Transactions />
               </MainLayout>
             } />
             <Route path='/profile' element={
