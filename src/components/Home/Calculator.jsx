@@ -51,7 +51,8 @@ function Calculator() {
   return (
     <div className="calculator-container">
       <div className="calculator ">
-        <CurrencySelector currency={currency} onChange={setCurrency} readOnly={showPaymentSelected} />
+        {!showPaymentSelected && <CurrencySelector currency={currency} onChange={setCurrency} />}
+        
         <Display value={display} currency={currency} />
         {showQr ? (
           <PaymentQr payAmount={display}/>

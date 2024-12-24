@@ -1,11 +1,10 @@
 import { Select } from 'antd';
 import '../../styles/CurrencySelector.css';
 
-function CurrencySelector({ currency, onChange, readOnly }) {
+function CurrencySelector({ currency, onChange }) {
   return (
     <div className="currency-selector text-start">
       <Select
-        disabled={readOnly}
         value={currency}
         onChange={onChange}
         options={[
